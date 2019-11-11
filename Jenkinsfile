@@ -33,7 +33,7 @@ pipeline {
                    sh 'curl -v -F file=@target/BMI-0.war -u ${username}:${password} http://${nexus_url}/nexus/content/repositories/devopstraining/comrades/bmi/BMI/BMI-${BUILD_NUMBER}.war'
                }
             }
-        }
+        }/*
         stage('Uploading yml to Ansible'){
             steps{
                 withCredentials([string(credentialsId: 'ANSADMIN_PASSWORD', variable: 'ansadmin_password')]){
@@ -61,7 +61,7 @@ pipeline {
                 }
             }
         }
-        
+        */
         /*stage('Deployment to AWS'){
             steps{
             withCredentials([usernamePassword(credentialsId: 'tomcatCredentials', passwordVariable: 'password', usernameVariable: 'username'),string(credentialsId: 'TOMCAT_URL', variable: 'tomcat_url')]){
